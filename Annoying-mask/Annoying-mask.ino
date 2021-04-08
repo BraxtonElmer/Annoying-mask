@@ -13,13 +13,13 @@ void loop() {
 int i = digitalRead(BUTTON_PIN);
 if(i==HIGH){
 //Mask removed
-digitalWrite(VIBRATOR, HIGH);
+digitalWrite(VIBRATOR, HIGH); //turn on vibration
 c++;
 if(c>2000)
 {
   //each time c becomes a value when 200 is added, it is 1 second.
-  tone(BUZZER, 50);
-  Serial.print("test");
+  //ten seconds passed
+  tone(BUZZER, 50); //turn on buzzer
 }
 Serial.println(c);
 }
@@ -27,8 +27,8 @@ else
 {
   //Mask on face
   c=0;
-  noTone(BUZZER);
-  digitalWrite(VIBRATOR, LOW);
+  noTone(BUZZER); //Turn off Buzzer
+  digitalWrite(VIBRATOR, LOW); //Turn of Vibration
   Serial.println(c);
 }
 
